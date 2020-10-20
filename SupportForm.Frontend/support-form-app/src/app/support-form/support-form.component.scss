@@ -1,0 +1,39 @@
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width, .half-width {
+  margin-top: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 50%;
+  float: left;
+}
+
+.left-padding {
+  padding-left: 15px;
+}
+
+.terms-section {
+  margin: 12px 0;
+}
+
+.result-section {
+  margin: 12px 0;
+}
+
+.terms-checkbox {
+  margin: 0 12px;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 4px;
+}

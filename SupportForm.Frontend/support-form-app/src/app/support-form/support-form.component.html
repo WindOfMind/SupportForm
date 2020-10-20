@@ -1,0 +1,93 @@
+<div style="text-align:center">
+  <h1>
+    Do you need assistance?
+  </h1>
+
+  <form class="form" [formGroup]="supportForm" name="supportFrom" (ngSubmit)="onSubmit(supportForm.value)">
+
+    <mat-form-field class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Ex. pat@example.com" formControlName="email" required>
+      <mat-icon matSuffix>email</mat-icon>
+      <mat-hint>Required</mat-hint>
+      <mat-error *ngIf="email.errors && email.errors.email && !email.errors.required">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="email.errors && email.errors.required">
+        Please enter your email address
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="half-width">
+      <mat-label>Telephone</mat-label>
+      <span matPrefix>+372 &nbsp;</span>
+      <input id="email" type="tel" matInput placeholder="555-55-555" formControlName="phone" required>
+      <mat-icon matSuffix>call</mat-icon>
+      <mat-hint>Required</mat-hint>
+      <mat-error *ngIf="phone.errors && !phone.errors.required">
+        Please enter a valid phone number
+      </mat-error>
+      <mat-error *ngIf="phone.errors && phone.errors.required">
+        Please, enter your telephone number
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="half-width left-padding">
+      <mat-label>Request type</mat-label>
+      <mat-select required formControlName="requestType">
+        <mat-option *ngFor="let requestType of requestTypes" [value]="requestType">
+          {{requestType}}
+        </mat-option>
+      </mat-select>
+      <mat-hint>Required</mat-hint>
+      <mat-error *ngIf="phone.hasError('required')">
+        Please, select a type of your inquiry
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="half-width">
+      <mat-label>User ID</mat-label>
+      <input type="text" matInput placeholder="Your customer ID if you have one" formControlName="userId">
+      <mat-hint>Optional</mat-hint>
+      <mat-error *ngIf="userId.hasError('required')">
+        User ID can't be longer than <strong>100</strong> symbols
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Your question</mat-label>
+      <textarea matInput #messageInput maxlength="1000" placeholder="Ex. I have an issue with..." formControlName="message" required></textarea>
+      <mat-hint align="start">Required</mat-hint>
+      <mat-hint align="end">{{messageInput.value.length}} / 1000</mat-hint>
+      <mat-error *ngIf="message.errors">
+        Please, type your message
+      </mat-error>
+    </mat-form-field>
+
+    <section class="terms-section">
+      <mat-checkbox #termsBox class="terms-checkbox" formControlName="terms" required>Agree with terms.</mat-checkbox>
+      <mat-error *ngIf="terms.errors">
+        Please, read the terms and put your agreement
+      </mat-error>
+    </section>
+
+    <button mat-button color="primary" type="submit" [disabled]="isSubmitting">
+      <span *ngIf="!isSubmitting">Let us know</span>
+      <mat-spinner diameter="32" *ngIf="isSubmitting"></mat-spinner>
+    </button>
+
+    <section class="result-section">
+      <mat-label *ngIf="!error && isSent">
+        Thank you! We got your message. We will get back to you as soon as possible but no later than <strong>48</strong> hours!
+      </mat-label>
+
+      <mat-error *ngIf="error && error.length > 0">
+        {{ error }}
+      </mat-error>
+    </section>
+
+  </form>
+
+</div>
+
+
