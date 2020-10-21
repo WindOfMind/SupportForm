@@ -14,15 +14,5 @@ namespace SupportForm.API
                 throw new InvalidOperationException($"Can't save the message. Id {supportMessage.Id} already exists.");
             }
         }
-
-        public SupportMessage Get(Guid id)
-        {
-            if (!_supportMessages.TryGetValue(id, out SupportMessage supportMessage))
-            {
-                throw new ArgumentException($"Support message with ID {id} not found.");
-            }
-
-            return supportMessage;
-        }
     }
 }
