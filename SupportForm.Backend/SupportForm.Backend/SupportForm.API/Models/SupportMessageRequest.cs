@@ -16,6 +16,8 @@ namespace SupportForm.API.Models
         /// </summary>
         [Required]
         [Phone]
+        [MinLength(7)]
+        [MaxLength(8)]
         public string Phone { get; set; }
 
         /// <summary>

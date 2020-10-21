@@ -22,7 +22,9 @@ namespace SupportForm.API.Controllers
         /// </summary>
         /// <param name="request"><see cref="SupportMessageRequest"/></param>
         /// <response code="200">Support message was successfully posted.</response>
+        /// <response code="200">Validation failed.</response>
         [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
         [HttpPost]
         public IActionResult Post([FromBody] SupportMessageRequest request)
         {
