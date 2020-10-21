@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SupportForm.API.Models;
 
 namespace SupportForm.API.Controllers
 {
@@ -16,6 +17,12 @@ namespace SupportForm.API.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Post a support message.
+        /// </summary>
+        /// <param name="request"><see cref="SupportMessageRequest"/></param>
+        /// <response code="200">Support message was successfully posted.</response>
+        [ProducesResponseType(200)]
         [HttpPost]
         public IActionResult Post([FromBody] SupportMessageRequest request)
         {
