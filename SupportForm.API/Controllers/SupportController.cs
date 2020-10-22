@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SupportForm.API.Models;
 using SupportForm.Domain;
@@ -36,7 +37,16 @@ namespace SupportForm.API.Controllers
                 supportMessage.UpdateCustomerId(request.CustomerId);
             }
 
-            _messageRepository.Save(supportMessage);
+            try
+            {
+                _messageRepository.Save(supportMessage);
+            }
+            catch (InvalidOperationException e)
+            {
+                _logger.LogError(e, "Failed to save a support message.");
+
+                return BadRequest();
+            }
 
             return Ok();
         }
