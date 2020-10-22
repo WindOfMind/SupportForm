@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SupportForm.API.Models;
 
 namespace SupportForm.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]/message")]
+    [Route("api/support/message")]
     public class SupportController : ControllerBase
     {
         private readonly ILogger<SupportController> _logger;
