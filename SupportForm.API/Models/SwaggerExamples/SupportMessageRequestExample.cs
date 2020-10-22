@@ -1,4 +1,5 @@
-﻿using Swashbuckle.AspNetCore.Filters;
+﻿using SupportForm.Domain;
+using Swashbuckle.AspNetCore.Filters;
 
 namespace SupportForm.API.Models.SwaggerExamples
 {

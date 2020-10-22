@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using SupportForm.Domain;
 
-namespace SupportForm.API
+namespace SupportForm.Infrastructure
 {
     public class SupportMessageRepository : ISupportMessageRepository
     {

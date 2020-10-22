@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SupportForm.API
+namespace SupportForm.Domain
 {
     public interface ISupportMessageRepository
     {

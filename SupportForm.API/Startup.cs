@@ -10,6 +10,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using SupportForm.API.Middleware;
 using SupportForm.API.Models.SwaggerExamples;
+using SupportForm.Domain;
+using SupportForm.Infrastructure;
 using Swashbuckle.AspNetCore.Filters;
 
 namespace SupportForm.API

@@ -1,7 +1,7 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SupportForm.API.Models;
+using SupportForm.Domain;
 
 namespace SupportForm.API.Controllers
 {

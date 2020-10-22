@@ -1,4 +1,4 @@
-﻿namespace SupportForm.API
+﻿namespace SupportForm.Domain
 {
     public enum MessageType
     {
