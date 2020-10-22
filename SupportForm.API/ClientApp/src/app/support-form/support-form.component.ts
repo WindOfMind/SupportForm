@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { SupportData } from '../models/support-data';
 import { RequestType } from '../models/request-type';
 import { SupportService } from '../data-services/support-service';
-import { catchError, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-support-form',
@@ -60,7 +59,7 @@ export class SupportFormComponent implements OnInit {
     return this.supportForm.get('terms');
   }
 
-  onSubmit(supportData: SupportData): void {
+  onSubmit(supportData: SupportData, formDirective: FormGroupDirective): void {
     this.isSent = false;
     this.isSubmitting = true;
     this.error = null;
@@ -71,7 +70,8 @@ export class SupportFormComponent implements OnInit {
         .subscribe(
           () => {
             this.isSent = true;
-            setTimeout(() => this.isSent = false);
+            setTimeout(() => this.isSent = false, 3000);
+            formDirective.resetForm();
             this.supportForm.reset();
             this.isSubmitting = false;
           },
@@ -80,7 +80,6 @@ export class SupportFormComponent implements OnInit {
             this.isSubmitting = false;
           }
         );
-
     }
   }
 }

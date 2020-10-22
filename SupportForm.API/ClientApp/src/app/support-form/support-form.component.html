@@ -3,7 +3,7 @@
     Do you need assistance?
   </h1>
 
-  <form class="form" [formGroup]="supportForm" name="supportFrom" (ngSubmit)="onSubmit(supportForm.value)">
+  <form class="form" [formGroup]="supportForm" name="supportFrom" #formDirective="ngForm" (ngSubmit)="onSubmit(supportForm.value, formDirective)">
 
     <mat-form-field class="full-width">
       <mat-label>Email</mat-label>
