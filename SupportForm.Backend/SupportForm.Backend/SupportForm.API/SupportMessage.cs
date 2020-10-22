@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace SupportForm.API
 {
@@ -10,7 +11,7 @@ namespace SupportForm.API
             Email = email;
             Phone = phone;
             MessageType = messageType;
-            Message = message;
+            Message = FilterTextFromScript(message);
         }
 
         public Guid Id { get; }
@@ -30,6 +31,16 @@ namespace SupportForm.API
             // In the real cases we may need to check if such customer ID is real before setting,
             // and set the customer object, not ID.
             CustomerId = customerId;
+        }
+
+        private string FilterTextFromScript(string text)
+        {
+            var regex = new Regex(
+                "(\\<script(.+?)\\</script\\>)",
+                RegexOptions.IgnoreCase
+            );
+
+            return regex.Replace(text, "");
         }
     }
 }
