@@ -64,5 +64,6 @@ Though, logging of the exceptions can be done differently, e.g. using exception 
 But, as I am more expereinced with Angular apps, I decided to proceed with it.
 - Messages for success and fail posting don't look nice. Probably, it makes sense to beautify it.
 - The checkbox for terms has a such default behaviour, so while you don't click on it, the error message will be shown. In the real case it makes sense to do it differently.
+- Also, it is possible to consider a cancel action for posting a message.
 - Unit tests, e2e tests.
 
