@@ -4,6 +4,8 @@ import { Observable, throwError } from 'rxjs';
 import { environment } from '../../environments';
 import { SupportData } from '../models/support-data';
 import { catchError} from 'rxjs/operators';
+import { ErrorType } from '../models/error-type';
+import { AppError } from '../models/app-error';
 
 export const BASE_URL = `${environment.supportMessageApiEndpoint}`;
 
@@ -19,14 +21,19 @@ export class SupportService {
   }
 
   private handleError(error: HttpErrorResponse): Observable<never> {
+    let appError: AppError;
     if (error.error instanceof ErrorEvent) {
-      // it's possible to log client side errors here.
-      return throwError(
-        'Please, check your network connect and try again. If it fails, please contact us with support@support.com');
+      appError = {
+        type: ErrorType.NetworkError,
+        message: 'Please, check your network connect and try again. If it fails, please contact us with support@support.com'
+      };
     } else {
-        // it's possible to log backend errors here.
-      return throwError(
-          'Sorry, we are having troubles. Please, try again later. If it fails, please contact us with support@support.com');
+      appError = {
+        type: ErrorType.NetworkError,
+        message: 'Sorry, we are having troubles. Please, try again later. If it fails, please contact us with support@support.com'
+      };
     }
+
+    return throwError(appError);
   }
 }

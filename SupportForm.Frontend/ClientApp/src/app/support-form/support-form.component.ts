@@ -13,7 +13,7 @@ export class SupportFormComponent implements OnInit {
   requestTypes: RequestType[] = [
     RequestType.Claim,
     RequestType.Proposal,
-     RequestType.Question
+    RequestType.Question
   ];
   isSent = false;
   supportForm: FormGroup;
@@ -74,7 +74,7 @@ export class SupportFormComponent implements OnInit {
             this.ClearSupportForm(formDirective);
           },
           error => {
-            this.error = error;
+            this.error = error.message;
             this.isSubmitting = false;
           }
         );

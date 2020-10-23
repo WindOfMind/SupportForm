@@ -3,7 +3,7 @@
     public enum MessageType
     {
         Claim = 0,
-        Question,
-        Proposal
+        Proposal,
+        Question
     }
 }

@@ -66,5 +66,6 @@ But, as I am more experienced with Angular apps, I decided to proceed with it.
 - The checkbox for terms has a such default behavior, so while you don't click on it, the error message will be shown. In the real case it makes sense to do it differently.
 - Also, it is possible to consider a cancel action for posting a message.
 - For proper control of all UI elements it's better to avoid using Angular Material.
+- If the list of inquiry types can be often updated, it will make sense to fetch this data from the API.
 - Unit tests, e2e tests.
 
