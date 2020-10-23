@@ -20,6 +20,7 @@
     "SupportForm.API": {
       "commandName": "Project",
       "launchBrowser": true,
+      "launchUrl": "api/documentation",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
@@ -28,7 +29,7 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/documentation",
       "publishAllPorts": true
     }
   }

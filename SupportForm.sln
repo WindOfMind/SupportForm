@@ -5,9 +5,14 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupportForm.API", "SupportForm.API\SupportForm.API.csproj", "{C9000410-D1B0-4AD4-9267-A006C0225064}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupportForm.Domain", "SupportForm.Domain\SupportForm.Domain.csproj", "{84493B10-A99D-433C-86E6-D30E227D447D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupportForm.Domain", "SupportForm.Domain\SupportForm.Domain.csproj", "{84493B10-A99D-433C-86E6-D30E227D447D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupportForm.Infrastructure", "SupportForm.Infrastructure\SupportForm.Infrastructure.csproj", "{2F88250B-A9C5-4083-88DA-E50B5FB68C8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupportForm.Infrastructure", "SupportForm.Infrastructure\SupportForm.Infrastructure.csproj", "{2F88250B-A9C5-4083-88DA-E50B5FB68C8F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{43091F2F-032E-4A19-A63D-302DD5617BAB}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
