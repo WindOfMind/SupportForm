@@ -22,7 +22,7 @@ As this is the assignment task, not real production application, local deploymen
 As an advantage, you can develop and deploy these parts separately.
 
 Actions to run:
-1. Build and run API solution https://github.com/WindOfMind/SupportForm/blob/main/SupportForm.sln.
+1. Build and run API solution https://github.com/WindOfMind/SupportForm/blob/main/SupportForm.sln (Preferably to use a console SupportForm.API as a running configuration in VS).
 2. Build and run Angular app. Before running app the first time, please run `npm install`.
 
 ### Back-end
