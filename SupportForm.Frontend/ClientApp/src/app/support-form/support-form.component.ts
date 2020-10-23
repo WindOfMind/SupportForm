@@ -15,10 +15,10 @@ export class SupportFormComponent implements OnInit {
     RequestType.Proposal,
      RequestType.Question
   ];
-  isSent: boolean = false;
+  isSent = false;
   supportForm: FormGroup;
   error: string;
-  isSubmitting: boolean = false;
+  isSubmitting = false;
 
   constructor(private formBuilder: FormBuilder, private supportService: SupportService) {
     this.supportForm = this.formBuilder.group({});
@@ -27,7 +27,7 @@ export class SupportFormComponent implements OnInit {
   ngOnInit(): void {
     this.supportForm = this.formBuilder.group({
       email : new FormControl('', [Validators.required, Validators.email]),
-      phone : new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(7), Validators.maxLength(8)]),
+      phone : new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.minLength(7), Validators.maxLength(8)]),
       userId : new FormControl('', [Validators.maxLength(100)]),
       requestType : new FormControl('', [Validators.required]),
       message : new FormControl('', [Validators.required, Validators.minLength(1)]),
@@ -70,10 +70,8 @@ export class SupportFormComponent implements OnInit {
         .subscribe(
           () => {
             this.isSent = true;
-            setTimeout(() => this.isSent = false, 3000);
-            formDirective.resetForm();
-            this.supportForm.reset();
-            this.isSubmitting = false;
+            setTimeout(() => this.isSent = false, 10000);
+            this.ClearSupportForm(formDirective);
           },
           error => {
             this.error = error;
@@ -81,5 +79,11 @@ export class SupportFormComponent implements OnInit {
           }
         );
     }
+  }
+
+  private ClearSupportForm(formDirective: FormGroupDirective): void {
+    formDirective.resetForm();
+    this.supportForm.reset();
+    this.isSubmitting = false;
   }
 }
